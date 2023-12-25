@@ -13,6 +13,6 @@ steps:
       - 'compute'
       - 'instances'
       - 'update-container'
-      - 'my-instance-name'  # Replace with your GCE instance name
+      - 'instance-1'  # Replace with your GCE instance name
       - '--zone=us-central1-a'  # Replace with your GCE instance zone
       - '--container-image=gcr.io/$PROJECT_ID/my-docker-image'
