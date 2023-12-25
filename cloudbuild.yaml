@@ -3,7 +3,6 @@ steps:
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/YOUR_IMAGE_NAME:$COMMIT_SHA', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/YOUR_IMAGE_NAME:$COMMIT_SHA']
-
 # Deploy the Docker image to a GCE instance
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
