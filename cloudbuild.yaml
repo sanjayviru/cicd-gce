@@ -6,6 +6,8 @@ steps:
   # Push the Docker image to Google Container Registry (GCR)
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/my-docker-image']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['run', '-p', '8080:8080', 'gcr.io/$PROJECT_ID/my-docker-image']
 
   # Deploy the Docker image to a GCE instance
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -15,5 +17,4 @@ steps:
       - 'update-container'
       - 'instance-1'  # Replace with your GCE instance name
       - '--zone=us-central1-a'  # Replace with your GCE instance zone
-      - '--metadata=startup-script-url=gs://path/to/startup-script.sh'  # Optional: Add a startup script URL
       - '--container-image=gcr.io/$PROJECT_ID/my-docker-image'
