@@ -16,6 +16,3 @@ steps:
       - 'my-instance-name'  # Replace with your GCE instance name
       - '--zone=us-central1-a'  # Replace with your GCE instance zone
       - '--container-image=gcr.io/$PROJECT_ID/my-docker-image'
-
-  substitutions:
-    _IMAGE_NAME: 'your_image_name'
