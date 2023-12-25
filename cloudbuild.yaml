@@ -15,4 +15,4 @@ steps:
       - 'update-container'
       - 'instance-1'  # Replace with your GCE instance name
       - '--zone=us-central1-a'  # Replace with your GCE instance zone
-      - '--container-image=gcr.io/$PROJECT_ID/my-docker-image'
+      - '--image=gcr.io/$PROJECT_ID/my-docker-image'
