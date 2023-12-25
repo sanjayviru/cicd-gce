@@ -15,4 +15,5 @@ steps:
       - 'update-container'
       - 'instance-1'  # Replace with your GCE instance name
       - '--zone=us-central1-a'  # Replace with your GCE instance zone
+      - '--metadata=startup-script-url=gs://path/to/startup-script.sh'  # Optional: Add a startup script URL
       - '--container-image=gcr.io/$PROJECT_ID/my-docker-image'
