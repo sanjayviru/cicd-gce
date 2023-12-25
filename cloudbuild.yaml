@@ -1,11 +1,11 @@
 steps:
 # Build the Docker image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/friendly-folio-408616/YOUR_IMAGE_NAME:latest', '.']
+  args: ['build', '-t', 'gcr.io/YOUR_PROJECT_ID/YOUR_IMAGE_NAME:latest', '.']
 
 # Push the Docker image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/friendly-folio-408616/YOUR_IMAGE_NAME:latest']
+  args: ['push', 'gcr.io/YOUR_PROJECT_ID/YOUR_IMAGE_NAME:latest']
 
 # Deploy the Docker image to a GCE instance
 - name: 'gcr.io/cloud-builders/gcloud'
@@ -14,7 +14,7 @@ steps:
   - 'instances'
   - 'update-container'
   - 'instance-1'  # Replace with your GCE instance name
-  - '--zone=us-central1'  # Replace with your GCE instance zone
-  - '--container-image=gcr.io/friendly-folio-408616/YOUR_IMAGE_NAME:latest'
-  - '--project=friendly-folio-408616'  # Replace with your GCP project ID
+  - '--zone=YOUR_ZONE'  # Replace with your GCE instance zone
+  - '--container-image=gcr.io/YOUR_PROJECT_ID/YOUR_IMAGE_NAME:latest'
+  - '--project=YOUR_PROJECT_ID'  # Replace with your GCP project ID
   - '--quiet'
